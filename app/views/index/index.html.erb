@@ -1,9 +1,20 @@
-<%= form_tag('/index/index', method: :get) do %>
-  <% @animal_behaviors.each do |ab| %>
-    <%= check_box_tag ab.code, ab.code, @checked_behaviors.key?(ab.code) %>
-    <%= label_tag ab.code, ab.behavior %>
-  <% end %>
-  <div><%= submit_tag '提交' %></div>
-<% end -%>
+<div class="container">
+  <h1>动物识别专家系统</h1>
 
-<%= @animal %>
+  <h3>选择动物特性</h3>
+  <%= form_tag('/index/index', method: :get) do %>
+    <% @animal_behaviors.each do |ab| %>
+      <div class="check-box-wrapper">
+        <%= check_box_tag ab.code, ab.code, @checked_behaviors.key?(ab.code) %>
+        <%= label_tag ab.code, ab.behavior %>
+      </div>
+    <% end %>
+    <div class="btn-submit">
+      <%= button_tag '提交' %>
+      <%= button_tag '重置', id: "btn-reset" %>
+    </div>
+  <% end -%>
+
+  <h3>识别结果</h3>
+  <%= @animal %>
+</div>
