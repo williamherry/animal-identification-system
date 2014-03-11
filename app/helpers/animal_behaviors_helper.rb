@@ -1,0 +1,2 @@
+module AnimalBehaviorsHelper
+end

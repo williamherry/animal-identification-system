@@ -1,0 +1,9 @@
+<%= form_tag('/index/index', method: :get) do %>
+  <% @animal_behaviors.each do |ab| %>
+    <%= check_box_tag ab.code, ab.code, @checked_behaviors.key?(ab.code) %>
+    <%= label_tag ab.code, ab.behavior %>
+  <% end %>
+  <div><%= submit_tag '提交' %></div>
+<% end -%>
+
+<%= @animal %>

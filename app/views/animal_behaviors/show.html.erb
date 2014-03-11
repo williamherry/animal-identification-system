@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @animal_behavior.code %>
+</p>
+
+<p>
+  <strong>Behavior:</strong>
+  <%= @animal_behavior.behavior %>
+</p>
+
+<%= link_to 'Edit', edit_animal_behavior_path(@animal_behavior) %> |
+<%= link_to 'Back', animal_behaviors_path %>
